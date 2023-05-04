@@ -4,16 +4,19 @@ import requests
 import openai
 
 
-apiKey = "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"
+apiKey = "" # INSERT API KEY FOR CHATGPT
 
 openai.api_key = apiKey
 
 
 response = openai.Completion.create(
   model="text-davinci-003",
-  prompt= "Say this is a test",
-  max_tokens=7,
-  temperature=0
+  prompt= "list me ingrediants for shrimp scampi",
+  temperature=0,
+  max_tokens=100,
+  top_p=1,
+  frequency_penalty=0.2,
+  presence_penalty=0
 )
 
 # Load the JSON data as a dictionary
@@ -24,4 +27,4 @@ choices = data['choices']
 
 # Print the choices
 for choice in choices:
-    print(choice['text'])
+  print(choice['text'])
