@@ -2,12 +2,13 @@ import os
 import json
 import requests
 import openai
+import config
 
 
-apiKey = "" # INSERT API KEY FOR CHATGPT
 
-openai.api_key = apiKey
+ # INSERT API KEY FOR CHATGPT
 
+openai.api_key = config.api_key
 
 response = openai.Completion.create(
   model="text-davinci-003",
