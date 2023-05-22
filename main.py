@@ -2,8 +2,11 @@
 import json
 import openai
 import config
+import recordaudio
+import Pro200GUI
 
 openai.api_key = config.api_key
+
 
 def api_call(string_recording):
   #API call
@@ -26,3 +29,6 @@ def api_call(string_recording):
   # Print the choices
   for choice in choices:
     print(choice['text'])
+    return (choice['text'])
+
+Pro200GUI.gui(api_call(recordaudio.record_ai(7, 44100)))
