@@ -4,19 +4,19 @@ import sys
 responseString = "The Fitnessgram case is a legal dispute between the American College of Sports Medicine (ACSM) and the Cooper Institute over the use of the Fitnessgram physical fitness assessment. The ACSM sued the Cooper Institute for copyright infringement, claiming that the Cooper Institute had copied the Fitnessgram assessment without permission. The case was eventually settled out of court, with d the Cooper Institute over the use of the Fitnessgram physical fitness assess the Cooper Institute agreeing to pay a licensing fee to the ACSM for the use of the Fitnessgram atitute had copied the Fitnessgram assessment without permission. The case was ssessment.  "
 def gui(response):
     root = Tk()
-    root.geometry('600x600') #Size of form
-    root.configure(background= 'white')
+    root.geometry('800x500') #Size of form
+    root.configure(background= "#302f2f")
     root.title('ChatGPT Response')
 
-    frame_counter = Frame(root)
+    frame_counter = Frame(root,background="#302f2f")
     frame_counter.grid(column=1, row=1)
 
-    lblTitle3 = Label(frame_counter, text="Chat's response: ", justify=CENTER)
+    lblTitle3 = Label(frame_counter, text="Chat's response: ", justify=CENTER, font= "Arial 20", background="#302f2f", fg="#d03382")
     lblTitle3.pack(side=TOP)
     response = insert_newline(response)
 
-    lblresponse = Label(frame_counter, text=response )
-    lblresponse.pack(side=TOP)
+    lblresponse = Label(frame_counter, text=response, justify=CENTER, background="#302f2f", fg="white", anchor=CENTER, padx= 1, pady=3, font="Arial 12")
+    lblresponse.pack(side=BOTTOM)
 
     def close_window(event):
         sys.exit() 
@@ -39,4 +39,4 @@ def insert_newline(string):
 
     return result
 
-# gui(responseString)
+#gui(responseString)
